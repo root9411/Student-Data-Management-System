@@ -26,8 +26,16 @@
             <input type="text" name="name" value="<%= user.name %>" placeholder="Mark Stoenis">
         </div>
         <div class="form-group">
-            <label for="Email" class="text-light">Email</label>
-            <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
+            <label for="fatherName" class="text-light">Father Name</label>
+            <input type="text" name="fatherName" value="<%= user.fatherName%>" placeholder="Father Name">
+        </div>
+        <div class="form-group">
+            <label for="motherName" class="text-light">Mother Name</label>
+            <input type="text" name="motherName" value="<%= user.motherName%>" placeholder="Mother Name">
+        </div>
+        <div class="form-group">
+            <label for="dob" class="text-light">Date Of Birth</label>
+            <input type="text" name="dob" value="<%= user.dob%>" placeholder="DD/MM/YYYY">
         </div>
         <div class="form-group">
             <label for="gender" class="text-light">Gender</label>
@@ -39,6 +47,23 @@
                 <input type="radio" id="radio-3" name="gender" value="Female"  <%= user.gender == 'Female' ? 'checked' : '' %> >
                 <label for="radio-3" class="radio-label">Female</label>
             </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phoneNumber" class="text-light">Phone Number</label>
+            <input type="text" name="phoneNumber" value="<%= user.phoneNumber%>" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="address" class="text-light">Address</label>
+            <input type="text" name="address" value="<%= user.address%>" placeholder="Full Address">
+        </div>
+        <div class="form-group">
+            <label for="course" class="text-light">Course Name</label>
+            <input type="text" name="course" value="<%= user.course%>" placeholder="Course Name">
+        </div>
+        <div class="form-group">
+            <label for="amountPaid" class="text-light">Amount Paid</label>
+            <input type="text" name="amountPaid" value="<%= user.amountPaid%>" placeholder="Amount Paid">
         </div>
 
         <div class="form-group">

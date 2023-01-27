@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 
 
 $("#add_user").submit(function(event){
