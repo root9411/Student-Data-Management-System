@@ -11,9 +11,15 @@ exports.create = (req,res)=>{
     // new user
     const user = new Userdb({
         name : req.body.name,
-        email : req.body.email,
+        fatherName : req.body.fatherName,
+        motherName : req.body.motherName,
+        dob : req.body.dob,
         gender: req.body.gender,
-        status : req.body.status
+        phoneNumber : req.body.phoneNumber,
+        address : req.body.address,
+        course : req.body.course,
+        amountPaid : req.body.amountPaid,
+        status : req.body.status,
     })
 
     // save user in the database
