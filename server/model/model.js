@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
+    rnumber : {
+        type : Number,
+        required: true
+    },
+    rdate : {
+        type : String,
+        required: true
+    },
     name : {
         type : String,
         required: true
