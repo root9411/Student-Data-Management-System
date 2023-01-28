@@ -1,5 +1,51 @@
 
 
+$('#download_btn').click(function(){
+    
+
+    let comment = "Do You Want to Download Data"
+    if(confirm(comment) == true){
+        fetch('http://localhost:3000/api/users')
+        .then(res => res.json())
+        .then(data => handle(data))
+    }else{
+        alert("File Not Downloaded")
+        console.log("file Not Downloaded")
+    }
+
+    function handle(inputData){
+        const headers = Object.keys(inputData[0]).toString();
+        
+        const main = inputData.map((item)=>{
+            return Object.values(item).toString();
+        })
+
+        const csv = [headers, ...main].join('\n');
+        startCSVDownload(csv);
+        alert("File Download Successfuly")
+    }
+
+    function startCSVDownload(input){
+
+        const blob = new Blob([input], {type :'application/csv'});
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.download = 'test-csv.csv';
+        a.href = url;
+        a.style.display = 'none';
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        a.remove();
+        URL.revokeObjectURL(url);
+
+
+    }
+});
+
 $("#add_user").submit(function(event){
     alert("Data Inserted Successfully!");
 })
