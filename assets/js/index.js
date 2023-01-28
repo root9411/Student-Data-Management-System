@@ -48,6 +48,7 @@ $('#download_btn').click(function(){
 
 $("#add_user").submit(function(event){
     alert("Data Inserted Successfully!");
+    document.location.href="/";
 })
 
 $("#update_user").submit(function(event){

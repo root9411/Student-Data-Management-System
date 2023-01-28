@@ -1,7 +1,9 @@
+const { request } = require('http');
 var Userdb = require('../model/model');
 
 // create and save new user
 exports.create = (req,res)=>{
+
     // validate request
     if(!req.body){
         res.status(400).send({ message : "Content can not be emtpy!"});
@@ -22,6 +24,7 @@ exports.create = (req,res)=>{
         course : req.body.course,
         amountPaid : req.body.amountPaid,
         status : req.body.status,
+        images : req.body.images
     })
 
     // save user in the database
@@ -36,7 +39,6 @@ exports.create = (req,res)=>{
                 message : err.message || "Some error occurred while creating a create operation"
             });
         });
-
 }
 
 // retrieve and return all users/ retrive and return a single user
